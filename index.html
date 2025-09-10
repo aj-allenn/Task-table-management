@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+   
+    <div class="main">
+        <div class="info">
+            <div class="inputbox">
+                <input type="search" id="searchBox" placeholder="Search Date/Task Name">
+                <button>OK</button>
+                <ul id="suggestions">
+                </ul>
+            </div>
+            <br><br>
+            <select id="filter">
+                <option value="All">All</option>
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+            </select>
+            <br><br>
+            <button class="addbtn" onclick="addBtn()">Add</button>
+        </div>
+
+
+        <div id="popup" class="popup">
+            <form onsubmit="addTask(event)" class="popup-content">
+                <h2 style="text-align: center;">Add Task</h2><br>
+                <label for="taskName">Task Name:</label><br>
+                <input type="text" id="taskName"><br><br>
+
+                <label for="taskDate">Date:</label><br>
+                <input type="date" id="taskDate"><br><br>
+
+                <button type="submit" id="sbmt" class="savebtn">Save</button>
+                <button id="cls" class="clsbtn" onclick="">Close</button>
+                <button class="editbutton" id="editid">Edit</button>
+            </form>
+        </div>
+
+        <div class="tasktable">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Task Name</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="taskList"></tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
