@@ -1,113 +1,230 @@
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: rgb(150, 231, 231);
+    background-color: #f4f6f8;
 }
 
-.info {
-    width: 100%;
-    height: 20vh;
-    background-color: aquamarine;
-    padding: 10px 0px 10px 0px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    padding: 0px 10px 0px 10px;
-}
-
-.inputbox {
-    height: 40px;
-    width: 400px;
-    display: flex;
-    border-radius: 20px;
-    border: solid 1px;
-}
-
-.inputbox button {
-    flex: 1;
-    height: 100%;
-    border-radius: 0px 20px 20px 0px;
-    border: solid 1px;
-}
-
-.info input {
-    padding-left: 10px;
-    border: none;
-    flex: 3;
-    height: 100%;
-    border-radius: 20px 0px 0px 20px;
-}
-
-.addbtn {
-    width: 150px;
-    height: 40px;
-    border-radius: 10px;
-    border: solid 1px;
-    background-color: rgb(215, 237, 205);
-}
-
-.popup {
-    display: none;
-    width: 400px;
-    height: 300px;
-    position: absolute;
-    top: 50%;
-    padding-left: 35px;
-    left: 50%;
-    background-color: rgb(225, 225, 222);
-    transform: translate(-50%, -50%);
-}
-
-.popup input{
-    width: 80%;
-    height: 30px;
-}
-
-.tasktable {
-    width: 80%;
+/* CARD */
+.card {
     margin: auto;
-    padding: 50px 0px 0px 0px;
+    width: 90%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+
+/* SEARCH SECTION */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.search input {
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding-left: 45px;
+    background-color: #f1f1f1;
+    transition: all 0.3s ease;
+}
+
+.search input:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.search img {
+    position: absolute;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+select {
+    width: 140px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.b1 {
+    width: 70px;
+    height: 35px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.b1:hover {
+    background-color: #191d02;
+}
+
+.savebtn {
+    width: 70px; 
+    height: 25px;
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-left: 85px;
+    margin-top: 10px;
+}
+
+.savebtn:hover {
+    background-color: #290407;
+}
+
+
+
+/* HEADINGS */
+h1 {
+    font-size: 24px;
+    color: #333;
+    padding-left: 0;
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* TABLE */
+.table {
+    width: 100%;
+    margin: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
 }
 
-tr,
-td,
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
 th {
-    border: solid 1px;
-    padding: 10px;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-.edtbtn {
-    background-color: rgb(133, 133, 215);
-    border-radius: 5px;
-    width: 50px;
-    border: none;
-    height: 25px;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-.dltbtn {
-    background-color: rgb(223, 76, 76);
-    width: 50px;
-    border-radius: 5px;
-    height: 25px;
-    border: none;
-}
-
-#filter {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    padding-left: 10px;
-}
-.editbutton{
+/* POPUP */
+.popup {
     display: none;
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    padding: 30px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popup h1 {
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.popup input {
+    width: 100%;
+    height: 35px;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.popup .b1 {
+    display: block;
+    margin: 20px auto 0;
+    width: 100px;
+}
+
+/* BUTTONS */
+.editbtn, .deletebtn {
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.editbtn {
+    background-color: #007bff;
+}
+
+.editbtn:hover {
+    background-color: #0069d9;
+}
+
+.deletebtn {
+    background-color: #dc3545;
+}
+
+.deletebtn:hover {
+    background-color: #c82333;
+}
+
+
+/* 🔹 Suggestions Box */
+.suggestions-box {
+    position: absolute;
+    top: 45px; /* appear just under the search input */
+    left: 45px; /* align with input (since search icon takes space) */
+    width: 250px;
+    max-height: 200px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* hidden until suggestions appear */
+}
+
+.suggestions-box div {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+}
+
+.suggestions-box div:hover {
+    background-color: #f1f1f1;
 }
